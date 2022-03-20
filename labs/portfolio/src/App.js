@@ -1,65 +1,47 @@
-import "./App.css"
+import './App.css';
+import RepetitionExercise from "./components/RepetitionExercise";
+import DurationExercise from "./components/DurationExercise";
+import { useState } from 'react'
 
-import MenuApp from "./components/MenuApp"
 
- let data = [
-  {
-    "menuName": "Dinner",
-    "menuItems": [
-      {
-        "itemId": 1,
-        "itemPrice": "12",
-        "itemName": "Lasagne",
-        "itemDescription": "Meat and cheese layered between house-made pasta with bell peppers and onions."
-      },
-      {
-        "itemId": 2,
-        "itemPrice": "10",
-        "itemName": "Cheese Ravioli",
-        "itemDescription": "Cheese-filled ravioli served with house red sauce."
-      },
-      {
-        "itemId": 3,
-        "itemPrice": "14",
-        "itemName": "Chicken Parmesan",
-        "itemDescription": "Breaded chicken topped with marinara sauce and lots of cheese served over house made spaghetti."
-      }
-    ]
-  },
-  {
-    "menuName": "Dessert",
-    "menuItems": [
-      {
-        "itemId": 45,
-        "itemPrice": "10",
-        "itemName": "Chocolate Lava Cake",
-        "itemDescription": "Dark chocolate molten lava cake. Serves 2-3."
-      },
-      {
-        "itemId": 47,
-        "itemPrice": "8",
-        "itemName": "Tiramisu",
-        "itemDescription": "Layers of espresso-soaked ladyfingers and marscarpone cream topped with cocoa and espresso powder."
-      },
-      {
-        "itemId": 49,
-        "itemPrice": "5",
-        "itemName": "Cannolis",
-        "itemDescription": "Three flaky pastries enclosing a rich, ricotta filling dotted with decadent chocolate chips."
-      },
-      {
-        "itemId": 50,
-        "itemPrice": "5",
-        "itemName": "Cappuccino",
-        "itemDescription": "Steamed milk with two ristretto shots of espresso."
-      }
-    ]
-  }
-]
 function App() {
-  return (
-    <div className="App">
-      <MenuApp data = {data}
-    /></div>)
+
+  let [displayCounter, setDisplayCounter] = useState(undefined)
+
+  if (displayCounter == true) {
+    return(<> <RepetitionExercise name={"Reptetition Push Ups Exercise"}></RepetitionExercise>
+      <button onClick={() => setDisplayCounter(undefined)}>Return</button>
+     </>)
+    
+
+  }
+  else if (displayCounter == false) {
+    return (<>
+    <DurationExercise name={"Duration Running Exercise"}></DurationExercise>
+    
+    <button onClick={() => setDisplayCounter(undefined)}>Return</button>
+    </>
+    )
+  }
+  else if(displayCounter == undefined){
+    return (
+      <>
+        <h1>Main Menu</h1>
+        <h2>Click on the repetion excersize or the duration excersize to get started.</h2> 
+        <h2>Get Excerising!</h2>
+        <p>
+        <button onClick={() => setDisplayCounter(true)}>Repetition Push Ups</button>
+        </p>
+        <p>
+        <button onClick={() => setDisplayCounter(false)}>Duration Running</button>
+        </p>
+
+
+      </>
+    )
+  }
+
+
 }
-export default App
+
+export default App;
