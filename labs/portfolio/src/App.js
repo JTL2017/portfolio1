@@ -11,7 +11,7 @@ function App() {
 
   if (displayCounter == true) {
     return(<> <RepetitionExercise name={"Reptetition Push Ups Exercise"}></RepetitionExercise>
-      <button onClick={() => setDisplayCounter(undefined)}>Return</button>
+      <button class = "repReturn" onClick={() => setDisplayCounter(undefined)}>Return</button>
      </>)
     
 
@@ -29,16 +29,16 @@ function App() {
     return (
       <>
         <h1>Excerises</h1>
-        <h2>Click on the repetion excersize or the duration excersize to get started.</h2> 
-        <h2>Get Excerising!</h2>
+        <h2>Click on the repetion excersize or the duration excersize to get started and get excercising!.</h2> 
+        
         <p>
-        <button onClick={() => setDisplayCounter(true)}>Repetition Push Ups</button>
+        <button class = "exercise" onClick={() => setDisplayCounter(true)}>Repetition Push Ups</button>
         </p>
         <p>
-        <button onClick={() => setDisplayCounter(false)}>Duration Running</button>
+        <button class = "exercise" onClick={() => setDisplayCounter(false)}>Duration Running</button>
         </p>
         <p></p>
-        <button onClick={() => setDisplayCounter(false)}>return</button>
+        <button class = "return" onClick={() => setDisplayCounter(false)}>return</button>
 
 
       </>

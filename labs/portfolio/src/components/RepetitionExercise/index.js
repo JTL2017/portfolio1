@@ -6,9 +6,9 @@ function RepetitionExercise({name})
     return(
         <div>
         <h1>{name}</h1>
-        <p>You have  {count} Reps</p>
-        <button onClick={() => setCount(count + 1)}>Reps</button>
-            <button onClick={() => setCount(0)}>Reset</button>
+        <p class = "reps">You have  {count} Reps</p>
+        <button class = "repetitionPage" onClick={() => setCount(count + 1)}>Reps</button>
+            <button class = "reset" onClick={() => setCount(0)}>Reset</button>
         
         </div>
     )
