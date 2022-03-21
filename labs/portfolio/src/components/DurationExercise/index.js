@@ -29,8 +29,8 @@ export default function DurationExercise({ name }) {
         <>
             <h1>{name}</h1>
             <p class = "timer">Timer: {String(pastTime.getMinutes()).padStart(2,'0')}:{String(pastTime.getSeconds()).padStart(2,'0')}.{String(pastTime.getMilliseconds()).padStart(2,'0')} </p>
-            <button onClick={() => { setTimerStarted(true); setStartTime(new Date())}}>Start</button>
-            <button onClick={() => { setTimerStarted(false); setStartTime(new Date(0))}}>Reset</button>
+            <button class = "startPage" onClick={() => { setTimerStarted(true); setStartTime(new Date())}}>Start</button>
+            <button class = "reset" onClick={() => { setTimerStarted(false); setStartTime(new Date(0))}}>Reset</button>
 
 
         </>

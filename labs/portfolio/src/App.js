@@ -7,38 +7,51 @@ import { useState } from 'react'
 
 function App() {
 
-  let [displayCounter, setDisplayCounter] = useState(false)
+  let [displayCounter, setDisplayCounter] = useState("title")
+  
 
-  if (displayCounter == true) {
-    return(<> <RepetitionExercise name={"Reptetition Push Ups Exercise"}></RepetitionExercise>
-      <button class = "repReturn" onClick={() => setDisplayCounter(undefined)}>Return</button>
+
+
+//let currentExercise = {name: "Push Ups", type: "repetition"}
+if(displayCounter == "title")
+{
+ return( <><TitleMenu name={"Exercise App"}></TitleMenu>
+  <button class = "titleButton" onClick={() => setDisplayCounter("main")}>Start</button>
+  </>
+ )
+}
+else if(displayCounter == "about")
+{
+
+}
+  else if (displayCounter == "rep") {
+    
+    return(<> <RepetitionExercise name={"Push ups"}></RepetitionExercise>
+      <button class = "repReturn" onClick={() => setDisplayCounter("main")}>Return</button>
      </>)
-    
-
-  }
-  else if (displayCounter == false) {
+  
+  } else if(displayCounter == "dur")
+  {
     return (<>
-    <TitleMenu name={"Exercise App"}></TitleMenu>
-    <button class = "titleButton" onClick={() => setDisplayCounter(undefined)}>Start</button>
-    
-    
+   <DurationExercise name={"Running"}></DurationExercise>
+      <button class = "repReturn" onClick={() => setDisplayCounter("main")}>Return</button>
     </>
     )
-  }
-  else if(displayCounter == undefined){
+    }
+  else if(displayCounter == "main"){
     return (
       <>
         <h1>Excerises</h1>
         <h2>Click on the repetion excersize or the duration excersize to get started and get excercising!.</h2> 
         
         <p>
-        <button class = "exercise" onClick={() => setDisplayCounter(true)}>Repetition Push Ups</button>
+        <button class = "exercise" onClick={() => setDisplayCounter("rep")}>Repetition Push Ups</button>
         </p>
         <p>
-        <button class = "exercise" onClick={() => setDisplayCounter(false)}>Duration Running</button>
+        <button class = "exercise" onClick={() => setDisplayCounter("dur")}>Duration Running</button>
         </p>
         <p></p>
-        <button class = "return" onClick={() => setDisplayCounter(false)}>return</button>
+        <button class = "return" onClick={() => setDisplayCounter("title")}>return</button>
 
 
       </>
