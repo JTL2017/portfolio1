@@ -1,12 +1,13 @@
 import './App.css';
 import RepetitionExercise from "./components/RepetitionExercise";
 import DurationExercise from "./components/DurationExercise";
+import TitleMenu from './components/TitleMenu';
 import { useState } from 'react'
 
 
 function App() {
 
-  let [displayCounter, setDisplayCounter] = useState(undefined)
+  let [displayCounter, setDisplayCounter] = useState(false)
 
   if (displayCounter == true) {
     return(<> <RepetitionExercise name={"Reptetition Push Ups Exercise"}></RepetitionExercise>
@@ -17,16 +18,17 @@ function App() {
   }
   else if (displayCounter == false) {
     return (<>
-    <DurationExercise name={"Duration Running Exercise"}></DurationExercise>
+    <TitleMenu name={"Exercise App"}></TitleMenu>
+    <button class = "titleButton" onClick={() => setDisplayCounter(undefined)}>Start</button>
     
-    <button onClick={() => setDisplayCounter(undefined)}>Return</button>
+    
     </>
     )
   }
   else if(displayCounter == undefined){
     return (
       <>
-        <h1>Main Menu</h1>
+        <h1>Excerises</h1>
         <h2>Click on the repetion excersize or the duration excersize to get started.</h2> 
         <h2>Get Excerising!</h2>
         <p>
@@ -35,6 +37,8 @@ function App() {
         <p>
         <button onClick={() => setDisplayCounter(false)}>Duration Running</button>
         </p>
+        <p></p>
+        <button onClick={() => setDisplayCounter(false)}>return</button>
 
 
       </>

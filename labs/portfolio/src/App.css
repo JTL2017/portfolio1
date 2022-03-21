@@ -27,7 +27,29 @@
 .App-link {
   color: #61dafb;
 }
+h1{
+color: yellowgreen;
+font-size: 50px;
+text-align: center;
+}
+body
+{
+  background-color: gray;
+}
+.titleButton
+{
+  width:300px;
+  height:100px;
+  color: yellowgreen;
+  background: gray;
+  border-radius: 50%;
+  border-color: yellowgreen ;
+  text-align: center;
+  font-size: 30px;
+  margin: 0 auto;
+  display: block;
 
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
