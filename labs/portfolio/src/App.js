@@ -13,7 +13,7 @@ function App() {
 
 
 
-//let currentExercise = {name: "Push Ups", type: "repetition"}
+
 if(displayCounter == "title")
 {
  return( <><TitleMenu name={"Exercise Website"}></TitleMenu>
