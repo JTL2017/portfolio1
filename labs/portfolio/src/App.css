@@ -29,6 +29,26 @@
   text-align: center;
 
 }
+.describe
+{
+  text-align: center;
+  font-size: 30px;
+  border: yellowgreen;
+  background-color: white;
+}
+.about{
+  width:90px;
+  height:30px;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  border-radius: 20px;
+  border-color:rgb(0, 0, 0);
+  text-align: center;
+  font-size: 15px;
+  margin: 0 auto;
+  display: block;
+  
+}
 .startPage
 {
   width:150px;

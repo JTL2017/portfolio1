@@ -2,6 +2,7 @@ import './App.css';
 import RepetitionExercise from "./components/RepetitionExercise";
 import DurationExercise from "./components/DurationExercise";
 import TitleMenu from './components/TitleMenu';
+import About from './components/About';
 import { useState } from 'react'
 
 
@@ -15,14 +16,19 @@ function App() {
 //let currentExercise = {name: "Push Ups", type: "repetition"}
 if(displayCounter == "title")
 {
- return( <><TitleMenu name={"Exercise App"}></TitleMenu>
+ return( <><TitleMenu name={"Exercise Website"}></TitleMenu>
   <button class = "titleButton" onClick={() => setDisplayCounter("main")}>Start</button>
+  <p></p>
+  <p></p>
+  <button class = "about" onClick={() => setDisplayCounter("about")}>About</button>
   </>
  )
 }
 else if(displayCounter == "about")
 {
-
+ return(<> <About name={"About"}></About>
+  <button class = "repReturn" onClick={() => setDisplayCounter("title")}>Return</button></>
+ )
 }
   else if (displayCounter == "rep") {
     
